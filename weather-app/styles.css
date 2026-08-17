@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url('assets/weather-bg.jpg');
+}
+.container {
+  margin: 0 auto;
+  width: 100dvw;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.navbar .brand-section {
+  display: flex;
+  align-items: center;
+}
+
+.search-section > form > input {
+  padding: 8px;
+  width: 250px;
+  border-radius: 8px;
+}
+
+.brand-section img {
+  border-radius: 100%;
+}
+
+.text-custom {
+  /* text-4xl */
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+
+  /* uppercase */
+  text-transform: uppercase;
+
+  /* font-bold */
+  font-weight: 70;
+
+  /* text-transparent */
+  color: transparent;
+
+  /* bg-clip-text */
+  background-clip: text;
+
+  /* bg-gradient-to-br from-blue-500 via-red-500 to-purple-700 */
+  background-image: linear-gradient(to bottom right, #3b82f6, #ef4444, #9333ea);
+
+  /* Required for bg-clip-text to work properly on block elements */
+  display: inline-block;
+}
