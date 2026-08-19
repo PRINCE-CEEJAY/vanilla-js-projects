@@ -9,12 +9,14 @@ body {
   justify-content: center;
   align-items: center;
   font-family: 'Segoe UI', Arial, sans-serif;
-  background: linear-gradient(160deg, #4facfe 0%, #00f2fe 100%);
+  background: linear-gradient(270deg, #1706b6 0%, #b208f0 100%);
   padding: 20px;
 }
 
 .card {
-  background: #ffffff;
+  background: url('assets/weather-bg.jpg');
+  background-size: cover;
+  background-position: center;
   width: 100%;
   max-width: 340px;
   border-radius: 16px;
@@ -37,6 +39,8 @@ body {
   border: 1px solid #ddd;
   font-size: 14px;
   outline: none;
+  background-color: transparent;
+  color: white;
 }
 
 #city-input:focus {
