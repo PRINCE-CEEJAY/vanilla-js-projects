@@ -1,36 +1,63 @@
 import { fetchWeatherData } from './fetch_data.js';
 
-let cityName = document.getElementById('city-name');
-let cityInput = document.getElementById('city-input');
-// let countryName = document.getElementById('country-name');
-let description = document.getElementById('description');
-let temperature = document.getElementById('temperature');
-let humidity = document.getElementById('humidity');
-let windSpeed = document.getElementById('wind');
-let feelsLike = document.getElementById('feels-like');
-let date = document.getElementById('date');
+// DOM Elements
+const cityName = document.getElementById('city-name');
+const cityInput = document.getElementById('city-input');
+const description = document.getElementById('description');
+const temperature = document.getElementById('temperature');
+const humidity = document.getElementById('humidity');
+const windSpeed = document.getElementById('wind');
+const feelsLike = document.getElementById('feels-like');
+const date = document.getElementById('date');
 const searchBtn = document.getElementById('search-btn');
+let weatherIcon = document.getElementById('weather-icon');
 
-const API_KEY = '98fe5a288a59e9a6ed2321ec2868d5e5';
+searchBtn.addEventListener('click', async (e) => {
+  e.preventDefault();
+  const query = cityInput.value.trim();
 
-searchBtn.addEventListener('click', async () => {
-  if (!cityInput.value) return;
-  let country = 'nigeria';
+  // Allow letters, spaces, and hyphens (min 1 char)
+  if (!/^[a-zA-Z\s-]+$/.test(query)) {
+    alert('Please enter a valid city name.');
+    return;
+  }
 
-  const API_URL = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput.value},${country}&appid=${API_KEY}&units=metric`;
-
-  let newData = await fetchWeatherData(API_URL);
-  console.log(newData);
-  updateUI(newData);
+  try {
+    const data = await fetchWeatherData(query, 'nigeria');
+    updateUI(data);
+    console.log(data);
+  } catch (error) {
+    alert(error.message || 'Failed to fetch weather data.');
+  }
 });
 
 function updateUI(data) {
-  description.innerText = data.weather[0].description;
-  cityName.innerText = data.name.toUpperCase();
-  temperature.innerHTML = `${Math.floor(data.main.temp)}°C`;
+  if (!data || !data.weather) return;
+  const iconCode = data.weather[0].icon;
 
-  humidity.innerText = `${data.main.humidity} %`;
-  windSpeed.innerText = `${data.wind.speed} km/h`;
-  feelsLike.innerHTML = `${Math.floor(data.main.feels_like)}°C`;
-  date.innerText = new Date().toLocaleDateString();
+  weatherIcon.src = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
+  cityName.innerText = data.name.toUpperCase();
+  description.innerText = data.weather[0]?.description || 'N/A';
+  temperature.innerHTML = `${Math.round(data.main.temp)}°C`;
+  humidity.innerText = `${data.main.humidity}%`;
+
+  // OpenWeather metric units return wind speed in m/s
+  const windKmH = Math.round(data.wind.speed);
+  windSpeed.innerText = `${windKmH} m/s`;
+
+  feelsLike.innerHTML = `${Math.round(data.main.feels_like)}°C`;
+  date.innerText = formattedDate();
+
+  //   reset inpt
+  cityInput.value = '';
+}
+
+function formattedDate() {
+  const options = {
+    weekday: 'long',
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  };
+  return new Date().toLocaleDateString('en-GB', options);
 }

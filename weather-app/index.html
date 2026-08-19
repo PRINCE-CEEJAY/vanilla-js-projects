@@ -20,14 +20,19 @@
   <body>
     <div class="card">
       <!-- search -->
-      <div class="search-box">
+      <form class="search-box">
         <input
           type="text"
           id="city-input"
           placeholder="Enter city name"
         />
-        <button id="search-btn">Search</button>
-      </div>
+        <button
+          type="submit"
+          id="search-btn"
+        >
+          Search
+        </button>
+      </form>
 
       <!-- loading / error states, toggle these with JS -->
       <p id="loading">Loading...</p>
@@ -36,13 +41,13 @@
       <!-- main weather display -->
       <div id="weather-result">
         <h1 id="city-name">Enugu</h1>
-        <p id="date">Wednesday, 19 August</p>
+        <p id="date">Wednesday, 19 August, 2026</p>
 
-        <!-- <img
+        <img
           id="weather-icon"
           src="https://openweathermap.org/img/wn/02d@2x.png"
           alt="weather icon"
-        /> -->
+        />
 
         <p id="temperature">28°C</p>
         <p id="description">Partly cloudy</p>
@@ -54,7 +59,7 @@
           </div>
           <div class="detail">
             <p>Wind</p>
-            <p id="wind">14 km/h</p>
+            <p id="wind">14 m/s</p>
           </div>
           <div class="detail">
             <p>Feels like</p>
