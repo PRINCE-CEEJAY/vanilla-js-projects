@@ -18,34 +18,53 @@
     ></script>
   </head>
   <body>
-    <nav class="navbar">
-      <section class="brand-section">
-        <img
-          src="assets/app-icon.png"
-          alt="App Icon"
-          width="50"
-          height="40"
+    <div class="card">
+      <!-- search -->
+      <div class="search-box">
+        <input
+          type="text"
+          id="city-input"
+          placeholder="Enter city name"
         />
-        <h1 class="text-custom">Weather App</h1>
-      </section>
+        <button id="search-btn">Search</button>
+      </div>
 
-      <!-- search bar -->
-      <section class="search-section">
-        <form>
-          <input
-            name="search"
-            placeholder="Search City ..."
-          />
-        </form>
-      </section>
+      <!-- loading / error states, toggle these with JS -->
+      <p id="loading">Loading...</p>
+      <p id="error">City not found. Try again.</p>
 
-      <section class="user-section">
-        <User />
-        <h1>Prince Ceejay</h1>
-      </section>
-    </nav>
-    <div class="container">
-      <h1>Home</h1>
+      <!-- main weather display -->
+      <div id="weather-result">
+        <h1 id="city-name">Enugu</h1>
+        <p id="date">Wednesday, 19 August</p>
+
+        <img
+          id="weather-icon"
+          src="https://openweathermap.org/img/wn/02d@2x.png"
+          alt="weather icon"
+        />
+
+        <p id="temperature">28°C</p>
+        <p id="description">Partly cloudy</p>
+
+        <div class="details">
+          <div class="detail">
+            <p>Humidity</p>
+            <p id="humidity">64%</p>
+          </div>
+          <div class="detail">
+            <p>Wind</p>
+            <p id="wind">14 km/h</p>
+          </div>
+          <div class="detail">
+            <p>Feels like</p>
+            <p id="feels-like">30°C</p>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <!-- OpenWeather Current Weather API endpoint:
+     https://api.openweathermap.org/data/2.5/weather?q={city}&units=metric&appid={API_KEY} -->
   </body>
 </html>
