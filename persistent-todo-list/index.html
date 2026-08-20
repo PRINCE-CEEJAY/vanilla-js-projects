@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Todo App</title>
+    <link
+      rel="stylesheet"
+      href="styles.css"
+    />
+    <script
+      src="script.js"
+      defer
+    ></script>
+  </head>
+  <body>
+    <div class="card">
+      <h1>My Tasks</h1>
+
+      <!-- add task -->
+      <form id="todo-form">
+        <input
+          type="text"
+          id="todo-input"
+          placeholder="Add a new task..."
+          autocomplete="off"
+        />
+        <button
+          type="submit"
+          id="add-btn"
+        >
+          +
+        </button>
+      </form>
+
+      <!-- search -->
+      <input
+        type="text"
+        id="search-input"
+        placeholder="Search tasks..."
+      />
+
+      <!-- filters -->
+      <div
+        class="filters"
+        id="filters"
+      >
+        <button
+          class="filter-btn"
+          data-filter="all"
+          data-active="true"
+        >
+          All
+        </button>
+        <button
+          class="filter-btn"
+          data-filter="active"
+          data-active="false"
+        >
+          Active
+        </button>
+        <button
+          class="filter-btn"
+          data-filter="completed"
+          data-active="false"
+        >
+          Completed
+        </button>
+      </div>
+
+      <!-- task list, items below are static examples -->
+      <ul id="todo-list">
+        <li
+          class="todo-item"
+          data-id="1"
+        >
+          <input
+            type="checkbox"
+            class="todo-checkbox"
+          />
+          <span class="todo-text">Buy groceries</span>
+          <button
+            class="delete-btn"
+            aria-label="Delete task"
+          >
+            ✕
+          </button>
+        </li>
+        <li
+          class="todo-item"
+          data-id="2"
+        >
+          <input
+            type="checkbox"
+            class="todo-checkbox"
+            checked
+          />
+          <span class="todo-text completed">Finish homework</span>
+          <button
+            class="delete-btn"
+            aria-label="Delete task"
+          >
+            ✕
+          </button>
+        </li>
+        <li
+          class="todo-item"
+          data-id="3"
+        >
+          <input
+            type="checkbox"
+            class="todo-checkbox"
+          />
+          <span class="todo-text">Walk the dog</span>
+          <button
+            class="delete-btn"
+            aria-label="Delete task"
+          >
+            ✕
+          </button>
+        </li>
+      </ul>
+
+      <!-- shown when search/filter returns nothing -->
+      <p id="empty-state">No tasks found.</p>
+
+      <!-- footer -->
+      <div id="footer">
+        <span id="items-left">2 items left</span>
+        <button id="clear-completed">Clear completed</button>
+      </div>
+    </div>
+  </body>
+</html>
