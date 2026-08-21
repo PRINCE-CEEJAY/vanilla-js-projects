@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MODAL</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="flex flex-col items-center">
+    <button class="btn btn-open px-6 py-2 bg-green-800 text-white font-bold hover:bg-transparent hover:border-2 hover:text-black cursor-pointer rounded-lg">Open Modal</button>
+
+    <!-- MODAL -->
+    <div class="modal fixed inset-0 hidden bg-black/50 items-center justify-center" id="modal">
+
+        <!-- modal content -->
+        <div class="modal-content relative w-[500px] p-6 bg-white rounded-2xl transition-all scale-95 opacity-50 duration-300">
+            <!-- modal close button -->
+            <button class="btn btn-close absolute top-2 right-2 rounded-md px-3 py-1 bg-red-900 font-bold cursor-pointer opacity-85 hover:opacity-100">Close</button>
+
+            <!-- modal content appears here -->
+            <div class="modal-body">
+                <h1>MODAL CONTENTS GO HERE</h1>
+                <h1>MODAL CONTENTS GO HERE</h1>
+                <h1>MODAL CONTENTS GO HERE</h1>
+                <h1>MODAL CONTENTS GO HERE</h1>
+                <h1>MODAL CONTENTS GO HERE</h1>
+            </div>
+        </div>
+    </div>
+    <script src="modal.js"></script>
+</body>
+</html>

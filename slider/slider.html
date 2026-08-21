@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMAGE SLIDER</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen">
+    <section class="hidden flex m-6 px-6 py-2 rounded-2xl bg-yellow-900 text-white font-bold items-center justify-between">
+        <h2>⚠</h2>
+        <h3 id="warning">warning message</h3>
+    </section>
+
+    <section class="max-w-md rounded-lg shadow-xl p-6 flex flex-col items-center justify-center font-bold bg-amber-800">
+        <h3 class="text-2xl font-bold text-blue-900">Slide: <span class="slide-number text-2xl font-bold text-red-900"></span></h3>
+        <image src="images/1.jpg" width="200" height="150" alt="profile image" id="slide" class="slide rounded-3xl transition-all duration-300 hover:scale-105 scale-95 hover:opacity-90"/>
+        <h1 class="name text-3xl font-bold underline text-green-600">User Name</h1>
+        <p class="description italic text-center text-white/60">the man behind the mask is the man of the people as much as he is a villain to the enemies he is our hero forever</p>
+
+        <div class="flex justify-evenly items-center w-full scale-130 mt-6">
+            <button class="btn btn-prev bg-amber-900/50 hover:opacity-50 hover:text-white font-bold px-4 py-2 rounded-lg cursor-pointer">⏮</button>
+            <button class="btn btn-random bg-amber-900/50 hover:opacity-50 hover:text-white font-bold px-4 py-2 rounded-lg cursor-pointer">Pick Randomly</button>
+            <button class="btn btn-next bg-amber-900/50 hover:opacity-50 hover:text-white font-bold px-4 py-2 rounded-lg cursor-pointer">⏭</button>
+        </div>
+    </section>
+    <script src="slider.js"></script>
+</body>
+</html>

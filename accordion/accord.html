@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accordion</title>
+</head>
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<body class="flex flex-col justify-center items-center min-h-screen">
+    <section class="flex flex-col justify-center min-w-md max-w-lg bg-gray-500 rounded-3xl shadow-xl">
+        <div>
+            <div class="flex justify-between p-4 rounded-t-3xl bg-amber-800">
+                <h1 class="text-xl font-bold text-white">Title 1</h1>
+                <button class="btn btn-toggle cursor-pointer px-3 py-1 rounded-md hover:scale-105 bg-green-800 text-white">+</button>
+            </div>
+            <div class="accord-text-container mt-3 text-md ">
+                <p class="italic p-3 text-justify ">Accordion text goes here Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi in saepe, quibusdam pariatur eligendi quisquam, nulla delectus, libero qui excepturi voluptates. Sapiente unde quae magnam quisquam magni? Hic, porro at.</p>
+            </div>
+        </div>
+        <div>
+            <div class="flex justify-between p-4 bg-amber-800">
+                <h1 class="text-xl font-bold text-white">Title 2</h1>
+                <button class="btn btn-toggle cursor-pointer px-3 py-1 rounded-md hover:scale-105 bg-green-800 text-white">+</button>
+            </div>
+            <div class="accord-text-container mt-3 text-md text-justify">
+                <p class="italic p-3">Accordion text goes here Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati repudiandae nam eaque libero fugiat ab, ullam, voluptatem placeat corporis accusantium, sequi sint tempora? Consequuntur amet odio quidem fuga, architecto maiores?</p>
+            </div>
+        </div>
+        <div>
+            <div class="flex justify-between p-4 bg-amber-800">
+                <h1 class="text-xl font-bold text-white">Title 3</h1>
+                <button class="btn btn-toggle cursor-pointer px-3 py-1 rounded-md hover:scale-105 bg-green-800 text-white">+</button>
+            </div>
+            <div class="accord-text-container mt-3 text-md text-justify">
+                <p class="italic p-3">Accordion text goes here Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos ipsa labore optio autem libero laboriosam molestias obcaecati cum adipisci facere culpa vitae, soluta dolores quidem blanditiis iure officia a. Vel!</p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
